@@ -1,5 +1,8 @@
-CREATE DATABASE IF NOT EXISTS BD_Eaglecopters
 
+
+CREATE DATABASE IF NOT EXISTS 'BD_Eaglecopters';
+
+USE BD_Eaglecopters;
 
 
 -- Create a new table called 'admin' in schema 'DB_Eaglecopters'
