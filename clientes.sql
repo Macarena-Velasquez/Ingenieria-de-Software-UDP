@@ -5,13 +5,13 @@ USE Eaglecopters;
 CREATE TABLE IF NOT EXISTS Cliente(
 	ID INT NOT NULL AUTO_INCREMENT,
 	Nombre VARCHAR(256) NOT NULL,
-	EmpresaID INT NOT NULL,
-	ObjetivoID INT NOT NULL,
+	empresaID INT,
+	objetivoID INT,
 	Tiempo INT NOT NULL,
 	Apuntes VARCHAR(1024),
 	PRIMARY KEY(ID),
-	FOREIGN KEY (EmpresaID) REFERENCES Empresa(ID),
-	FOREIGN KEY (ObjetivoID) REFERENCES Helicopteros(ID)
+	FOREIGN KEY (empresaID) REFERENCES Empresa(ID),
+	FOREIGN KEY (bbjetivoID) REFERENCES Helicopteros(ID)
     
 );
 
