@@ -21,9 +21,9 @@ CREATE TABLE IF NOT EXISTS Ejecutivos
 (
     ID INT NOT NULL AUTO_INCREMENT, 
     nombre VARCHAR(256) NOT NULL,
-    datosID_eje INT NOT NULL,
+    datosID INT NOT NULL,
     PRIMARY KEY(ID),
-    FOREIGN KEY(datosID_eje) REFERENCES Users(ID)
+    FOREIGN KEY(datosID) REFERENCES usuarios(ID)
     
 );
 
@@ -34,9 +34,9 @@ CREATE TABLE IF NOT EXISTS Administrador
 (
     ID INT NOT NULL AUTO_INCREMENT, 
     nombre VARCHAR(256) NOT NULL,
-    datosID_admin INT NOT NULL,
+    datosID INT NOT NULL,
     PRIMARY KEY (ID),
-    FOREIGN  KEY(datosID_admin) REFERENCES Users(ID)
+    FOREIGN  KEY(datosID) REFERENCES usuarios(ID)
    
     
 );
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS Helicopteros
 );
 
 
-CREATE TABLE IF NOT EXISTS Users
+CREATE TABLE IF NOT EXISTS usuarios
 (
     ID INT NOT NULL AUTO_INCREMENT, 
     mail VARCHAR(50) NOT NULL,
