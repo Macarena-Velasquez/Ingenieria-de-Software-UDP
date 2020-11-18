@@ -14,19 +14,20 @@ GO
 
 -- Create a new table called 'admin' in schema 'DB_Eaglecopters'
 -- Drop the table if it already exists
-IF OBJECT_ID('DB_Eaglecopters.admin', 'U') IS NOT NULL
-DROP TABLE DB_Eaglecopters.admin
+IF OBJECT_ID('DB_Eaglecopters.cliente', 'U') IS NOT NULL
+DROP TABLE DB_Eaglecopters.cliente
 GO
 -- Create the table in the specified schema
-CREATE TABLE DB_Eaglecopters.admin
+CREATE TABLE DB_Eaglecopters.cliente
 (
-    administradorId INT NOT NULL PRIMARY KEY, -- primary key column
+    clienteID INT NOT NULL PRIMARY KEY, -- primary key column
     Nombre [NVARCHAR](256) NOT NULL,
-    Empresa [NVARCHAR](256) NOT NULL,
+    FOREIGN KEY (EmpresaID) REFERENCES Empresas(EmpresaID)
+    --Empresa [NVARCHAR](256) NOT NULL,
     Objetivo [NVARCHAR](256) NOT NULL,
     Tiempo INT NOT NULL,
-    Apuntes [NVARCHAR](1024) NOT NULL
-    -- specify more columns here
+    Apuntes [NVARCHAR](1024)
+    
 );
 
 
@@ -38,11 +39,12 @@ GO
 -- Create the table in the specified schema
 CREATE TABLE DB_Eaglecopters.Ejecutivos
 (
-    EmpresaId INT NOT NULL PRIMARY KEY, -- primary key column
+    EmpresaID INT NOT NULL PRIMARY KEY, -- primary key column
     nombre [NVARCHAR](256) NOT NULL,
-    correo [NVARCHAR](50) NOT NULL,
-    pass [NVARCHAR](256) NOT NULL
-    -- specify more columns here
+    FOREIGN KEY(datosID) REFERENCES users(usersID)
+    --correo [NVARCHAR](50) NOT NULL,
+    --pass [NVARCHAR](256) NOT NULL
+    
 );
 GO
 
@@ -54,11 +56,12 @@ GO
 -- Create the table in the specified schema
 CREATE TABLE DB_Eaglecopters.admin
 (
-    adminId INT NOT NULL PRIMARY KEY, -- primary key column
+    adminID INT NOT NULL PRIMARY KEY, -- primary key column
     nombre [NVARCHAR](50) NOT NULL,
-    correo [NVARCHAR](50) NOT NULL,
-    pass  [NVARCHAR](50) NOT NULL
-    -- specify more columns here
+    FOREIGN  KEY(datosID) REFERENCES users(usersId)
+    --correo [NVARCHAR](50) NOT NULL,
+    --pass  [NVARCHAR](50) NOT NULL
+    
 );
 GO
 
@@ -70,10 +73,10 @@ GO
 -- Create the table in the specified schema
 CREATE TABLE DB_Eaglecopters.Empresa
 (
-    EmpresaId INT NOT NULL PRIMARY KEY, -- primary key column
+    EmpresaID INT NOT NULL PRIMARY KEY, -- primary key column
     nombre [NVARCHAR](256) NOT NULL,
-    rubro [NVARCHAR](50) NOT NULL
-    -- specify more columns here
+    FOREIGN KEY (rubroID) REFERENCES rubro(rubroID)
+    
 );
 GO
 
@@ -85,10 +88,10 @@ GO
 -- Create the table in the specified schema
 CREATE TABLE DB_Eaglecopters.rubro
 (
-    rubroId INT NOT NULL PRIMARY KEY, -- primary key column
+    rubroID INT NOT NULL PRIMARY KEY, -- primary key column
     nombre [NVARCHAR](256) NOT NULL,
     tipo [NVARCHAR](256) NOT NULL
-    -- specify more columns here
+    
 );
 GO
 
@@ -101,8 +104,24 @@ GO
 CREATE TABLE DB_Eaglecopters.Heli
 (
     HeliId INT NOT NULL PRIMARY KEY, -- primary key column
-    Column1 [NVARCHAR](50) NOT NULL,
-    Column2 [NVARCHAR](50) NOT NULL
-    -- specify more columns here
+    modelo [NVARCHAR](50) NOT NULL,
+    marca [NVARCHAR](50) NOT NULL,
+    patente_tipo [NVARCHAR](50) NOT NULL
+    
+);
+GO
+
+-- Create a new table called 'users' in schema 'BD_Eaglecopters'
+-- Drop the table if it already exists
+IF OBJECT_ID('BD_Eaglecopters.users', 'U') IS NOT NULL
+DROP TABLE BD_Eaglecopters.users
+GO
+-- Create the table in the specified schema
+CREATE TABLE BD_Eaglecopters.users
+(
+    usersId INT NOT NULL PRIMARY KEY, -- primary key column
+    correo [NVARCHAR](50) NOT NULL,
+    pass [NVARCHAR](50) NOT NULL
+    
 );
 GO
