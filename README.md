@@ -2,7 +2,7 @@
 Proyecto ingeniería de software.
 
 
-Base de datos: MySQL
+Base de datos: MySQL 8.0
 Página: html, css y js.
 
 Falta:
