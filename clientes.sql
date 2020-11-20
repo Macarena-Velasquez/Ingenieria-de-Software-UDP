@@ -6,6 +6,8 @@ CREATE TABLE IF NOT EXISTS Cliente(
 	ID INT NOT NULL AUTO_INCREMENT,
 	Nombre VARCHAR(256) NOT NULL,
 	empresaID INT,
+    email NCHAR(255),
+    telefono INT,
 	objetivoID INT,
 	Tiempo INT NOT NULL,
 	Apuntes VARCHAR(1024),
@@ -14,7 +16,6 @@ CREATE TABLE IF NOT EXISTS Cliente(
 	FOREIGN KEY (bbjetivoID) REFERENCES Helicopteros(ID)
     
 );
-
 
 
 
@@ -82,7 +83,7 @@ CREATE TABLE IF NOT EXISTS usuarios
 (
     ID INT NOT NULL AUTO_INCREMENT, 
     mail VARCHAR(50) NOT NULL,
-    pass VARCHAR(256) NOT NULL,
+    pass NCHAR(70) NOT NULL,
     PRIMARY KEY (ID)
     
 );
