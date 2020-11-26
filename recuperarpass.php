@@ -18,7 +18,7 @@ $opcEspecial = TRUE;
 $letras ="abcdefghijklmnopqrstuvwxyz";
 $numeros = "1234567890";
 $letrasMayus = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-$especiales ="|@#~$%()=^*+[]{}-_";
+$especiales ="@#$%()=*+-_";
 $listado = "";
 $password = "";
 if ($opcLetra == TRUE) $listado .= $letras;
