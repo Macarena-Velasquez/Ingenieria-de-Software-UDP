@@ -9,8 +9,9 @@ CREATE TABLE IF NOT EXISTS Cliente(
         email NCHAR(255),
         telefono INT,
 	objetivoID INT,
-	Tiempo INT NOT NULL,
-	Apuntes VARCHAR(1024),
+	fecha INT NOT NULL,
+	comentarios VARCHAR(1024),
+	notificacion INT DEFAULT NULL,
 	PRIMARY KEY(ID),
 	FOREIGN KEY (empresaID) REFERENCES Empresa(ID),
 	FOREIGN KEY (bbjetivoID) REFERENCES Helicopteros(ID)
@@ -23,7 +24,7 @@ CREATE TABLE IF NOT EXISTS Ejecutivos
 (
     ID INT NOT NULL AUTO_INCREMENT, 
     nombre VARCHAR(256) NOT NULL,
-    datosID INT NOT NULL,
+    usuariosID INT NOT NULL,
     PRIMARY KEY(ID),
     FOREIGN KEY(datosID) REFERENCES usuarios(ID)
     
@@ -36,7 +37,7 @@ CREATE TABLE IF NOT EXISTS Administrador
 (
     ID INT NOT NULL AUTO_INCREMENT, 
     nombre VARCHAR(256) NOT NULL,
-    datosID INT NOT NULL,
+    usuarioID INT NOT NULL,
     PRIMARY KEY (ID),
     FOREIGN  KEY(datosID) REFERENCES usuarios(ID)
    
@@ -60,7 +61,6 @@ CREATE TABLE IF NOT EXISTS Rubros
 (
     ID INT NOT NULL AUTO_INCREMENT,
     nombre NCHAR(255) NOT NULL,
-    tipo VARCHAR(256) NOT NULL,
     PRIMARY KEY(ID)
     
 );
@@ -87,6 +87,4 @@ CREATE TABLE IF NOT EXISTS usuarios
     PRIMARY KEY (ID)
     
 );
-
-
 
