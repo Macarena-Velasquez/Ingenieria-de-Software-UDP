@@ -41,21 +41,7 @@ nav{
     font-weight: bold;
     font-size: 14px;
 }
-.nav-links .notificacion{
-    align-items: center;
-    display: flex;
-}
 
-.nav-links .numero_notificacion{
-    border-radius: 6px;
-    background-color:white ;
-    color: black;
-    text-decoration: none;
-    padding: 0px 10px 0px 10px;
-    letter-spacing: 1px;
-    font-weight: bold;
-    font-size: 20px;
-}
 .burger {
     display: none;
     cursor: pointer;
@@ -160,7 +146,7 @@ nav{
     margin: auto;
 }
 .contenedor-form-1 { /* modifica visualmente la clase contenedor-form de erCaracteristicas.html */
-    background:rgba(0, 0, 0, 0.35);
+    background: rgba(185, 184, 184, 0.35);
     width: 100%;
     max-width: 700px;
     margin: 48px auto;
@@ -169,19 +155,19 @@ nav{
     padding: 40px;
 }
 
-.contenedor-form-1 li{
-    list-style: none;
-    display: flex;
+.contenedor-form-1 .linea{
+    max-width: 600px;
+    height: 1px;
+    background-color: #5c5b5b;
+    margin: 0px 10px 0px 80px;   
 }
-.contenedor-form-1 label{
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.37);
-    width: 30%;
-    padding: 5px 10px; 
-    color: #ffffff;
-    border: none;
-    border-radius: 2px;
-    font-size: 14px;
-    font-weight: normal;
-    margin: 0px 0 10px 20px;
+
+.contenedor-form-2 {
+    background: rgba(185, 184, 184, 0.35);
+    width: 100%;
+    max-width: 700px;
+    margin: 48px auto;
+    /* color:white; */
+    border-radius: 5px;
+    padding: 40px;
 }

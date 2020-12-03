@@ -34,7 +34,6 @@ nav{
 .nav-links li{
     list-style: none;
 }
-
 .nav-links a{
     color: #ffffff;
     text-decoration: none;
@@ -43,21 +42,6 @@ nav{
     font-size: 14px;
 }
 
-.nav-links .notificacion{
-    align-items: center;
-    display: flex;
-}
-
-.nav-links .numero_notificacion{
-    border-radius: 6px;
-    background-color:white ;
-    color: black;
-    text-decoration: none;
-    padding: 0px 10px 0px 10px;
-    letter-spacing: 1px;
-    font-weight: bold;
-    font-size: 20px;
-}
 .burger {
     display: none;
     cursor: pointer;
@@ -96,45 +80,17 @@ nav{
     
 }
 
-/*////////////////Modificar boton agregar cliente*/
-.search_bar .button_AgregarClientes{
-    font-weight: bold;
-    font-size: 14px;
-    padding:  0.5%;
-    margin-left: 3%;
-    text-decoration: none;
-    border-radius: 5px;
-    border: 2px solid #330b0b; 
-    background-color: #c72323; 
-}
-.button_AgregarClientes:visited {
-    
-    color: #ffffff;
-}
-.button_AgregarClientes:hover{
-    color: #ffffff;
-    text-decoration: underline;
-}
-.button_AgregarClientes:link{
-    color: #ffffff;
-}
-.button_AgregarClientes img{
-    width: 15px ;
-}
-
 /*//////////////////////modificar tabla de clientes////////////////////////////*/
 .title-client{
-    color: white;
     margin-top: 30px;
     margin-left: 25%;
 }
-.tabla_buscador{
-    margin: 7% 0px 0px 35%;
+.client-table{
+    margin: 25px 0px 0px 25px;
 }
 .content-table{
     border-collapse: collapse;
     margin: auto;
-    
     font-size: 0.9em;
     min-width: 400px;
 }
@@ -150,11 +106,14 @@ nav{
 }
 
 .content-table tbody tr{
-    border-bottom: 2px solid #ffffff;
+    border-bottom: 1px solid #6e6e6e;
     color: #ffffff;
-    background-color: #9c3030cc; 
+    background-color: #8f8585; 
 }
 
+.content-table tbody tr:nth-of-type(even){
+    background-color: #c72727;
+}
 .content-table tbody tr a{
     text-decoration: none;
 }
@@ -168,6 +127,7 @@ nav{
 .content-table tbody tr a:link{ /*el color del link cuando aun no es visitado ("Eaglecopters")*/
     color: #ffffff;
 }
+
 
 /*////////////////////////////////////////////////////////////////7*/
 
@@ -216,7 +176,11 @@ nav{
         display: block;
     }
 
-    
+    .content-table th,
+    .content-table td{
+        padding: 12px 15px;
+    }
+
     .search_bar{
         margin-top: 30px;
         margin-left: 15%;
