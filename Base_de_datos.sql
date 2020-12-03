@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS Cliente(
 	Nombre VARCHAR(256) NOT NULL,
 	empresaID INT,
         email NCHAR(255),
-        telefono INT,
+        telefono VARCHAR(50),
 	objetivoID INT,
 	fecha INT NOT NULL,
 	comentarios VARCHAR(1024),
